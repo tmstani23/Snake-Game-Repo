@@ -1,6 +1,8 @@
 import pygame
 import time
 import random
+import os
+import sys
 
 #this is a test of pygame
 
@@ -10,8 +12,13 @@ import random
 checkInit = pygame.init()
 print(checkInit)
 
+#create a variable that holds the path of the Tanks.py file
+dir = os.path.dirname(__file__)
+#print current working directory to console
+print(os.getcwd())
+
 #define color variables:
-bgrey = (24,51,49)
+bgrey = (24, 51, 49)
 blue = (82,112,116)
 lgrey = (163,181,166)
 maroon = (128,0,0)
@@ -33,9 +40,9 @@ block_size = 20
 appleThickness = 30
 
 #define snake's head image:
-sh_image = pygame.image.load("c:/Tim's Files/my dream/learning/Programming/python/Snake Game/snakehead1.png")
+sh_image = pygame.image.load('snakehead1.png')
 #define apple image:
-apple_image = pygame.image.load("c:/Tim's Files/my dream/learning/Programming/python/Snake Game/apple2.png")
+apple_image = pygame.image.load('apple2.png')
 
 #create the game surface with resolution of 800 x 600:
 gameDisplay = pygame.display.set_mode((display_width, display_height))
@@ -43,7 +50,7 @@ gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Snake')
 
 #incorporate game icon
-icon = pygame.image.load("c:/Tim's Files/my dream/learning/Programming/python/Snake Game/gameicon.jpg")
+icon = pygame.image.load('gameicon.jpg')
 pygame.display.set_icon(icon)
 #define a clock variable that tracks time in the game loop
 clock = pygame.time.Clock()
